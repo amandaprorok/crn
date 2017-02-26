@@ -1,6 +1,6 @@
 # CRN Simulator
 
-This repository allows to quickly simulate a CRN specified using a JSON file.
+This repository enables quick simulation of a CRN (Chemical Reaction Network) that is specified using a JSON file.
 It outputs the distribution of the different species through time.
 
 It can interface with Stochkit (through the ```--stochkit_path``` flag) or CMEPy (using the ```--cmepy``` flag).
@@ -23,7 +23,7 @@ We are interested in securing the operation of robotic networks composed of hete
 
 ## Relevant publications
 
-This code was used to produce the results seen on the following privacy related papers:
+This code was used to produce the results seen in the following privacy-related papers:
 
 A. Prorok, V. Kumar, Towards Differentially Private Aggregation of Heterogeneous Robots, 13th International Symposium on Distributed Autonomous Robotic Systems (DARS), 2016. [PDF](http://prorok.me/wp-content/uploads/2015/02/DARS-2016_Prorok.pdf)
 
