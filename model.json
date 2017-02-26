@@ -1,0 +1,41 @@
+// CRN with following equations:
+// A + B -> 2B
+// B <-> A
+//
+// Example of commands:
+// > python crn.py --duration=0.5 --model=model.json --meanode --integration_dt=0.1 --show_plots --show_observable_plots
+// > python crn.py --duration=0.5 --model=model.json --cmepy --integration_dt=0.1 --show_plots --show_observable_plots
+
+{
+    // Reactions are written in a list.
+    "reactions": [
+        {
+            "reactants": ["A", "B"],
+            "products": ["B", "B"],
+            "rate": 2,
+            "name": "R1"
+        },
+        {
+            "reactants": ["B"],
+            "products": ["A"],
+            // If two rates are present, the reverse reaction corresponding
+            // to the second rate is created.
+            "rate": [2, 0.1],
+            // If two rates are present, then two names must be given.
+            "name": ["R2", "R3"]
+        }
+    ],
+
+    // Initial populations.
+    "populations": {
+        "A": 10,
+        "B": 5
+    },
+
+    // Observable states. Used for privacy computation.
+    // Consists of a dictionary of list of species to add.
+    // These lists must disjoint.
+    "observable_states": {
+        "AB": ["A", "B"]
+    }
+}
